@@ -24,3 +24,6 @@ config.num = 11
 config.fd = True
 print config.num
 print config.fd
+#pconf = worker.new_Configp()
+master.Run(config)
+
