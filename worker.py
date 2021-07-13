@@ -62,6 +62,21 @@ class _SwigNonDynamicMeta(type):
 
 
 
+def new_intp():
+    return _worker.new_intp()
+
+def copy_intp(value):
+    return _worker.copy_intp(value)
+
+def delete_intp(obj):
+    return _worker.delete_intp(obj)
+
+def intp_assign(obj, value):
+    return _worker.intp_assign(obj, value)
+
+def intp_value(obj):
+    return _worker.intp_value(obj)
+
 def GetWorker(target):
     return _worker.GetWorker(target)
 
