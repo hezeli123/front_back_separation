@@ -16,3 +16,11 @@ context = worker.new_intp()
 master.Run(context)
 wk.Run(context)
 
+# struc test
+config = worker.Config()
+print config.num
+print config.fd
+config.num = 11
+config.fd = True
+print config.num
+print config.fd

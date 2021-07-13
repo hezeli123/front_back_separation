@@ -2691,9 +2691,10 @@ SWIGINTERN PyObject *SWIG_PyStaticMethod_New(PyObject *SWIGUNUSEDPARM(self), PyO
 
 #define SWIGTYPE_p_char swig_types[0]
 #define SWIGTYPE_p_int swig_types[1]
-#define SWIGTYPE_p_worker__Worker swig_types[2]
-static swig_type_info *swig_types[4];
-static swig_module_info swig_module = {swig_types, 3, 0, 0, 0, 0};
+#define SWIGTYPE_p_worker__Config swig_types[2]
+#define SWIGTYPE_p_worker__Worker swig_types[3]
+static swig_type_info *swig_types[5];
+static swig_module_info swig_module = {swig_types, 4, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2982,6 +2983,27 @@ SWIGINTERNINLINE PyObject*
 #include <string>
 
 
+SWIGINTERN int
+SWIG_AsVal_bool (PyObject *obj, bool *val)
+{
+  int r;
+  if (!PyBool_Check(obj))
+    return SWIG_ERROR;
+  r = PyObject_IsTrue(obj);
+  if (r == -1)
+    return SWIG_ERROR;
+  if (val) *val = r ? true : false;
+  return SWIG_OK;
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_bool  (bool value)
+{
+  return PyBool_FromLong(value ? 1 : 0);
+}
+
+
 SWIGINTERN swig_type_info*
 SWIG_pchar_descriptor(void)
 {
@@ -3134,13 +3156,6 @@ SWIG_AsPtr_std_string (PyObject * obj, std::string **val)
   return SWIG_ERROR;
 }
 
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_bool  (bool value)
-{
-  return PyBool_FromLong(value ? 1 : 0);
-}
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3253,6 +3268,156 @@ fail:
   return NULL;
 }
 
+
+SWIGINTERN PyObject *_wrap_Config_num_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  worker::Config *arg1 = (worker::Config *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "Config_num_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_worker__Config, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_num_set" "', argument " "1"" of type '" "worker::Config *""'"); 
+  }
+  arg1 = reinterpret_cast< worker::Config * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Config_num_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->num = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Config_num_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  worker::Config *arg1 = (worker::Config *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_worker__Config, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_num_get" "', argument " "1"" of type '" "worker::Config *""'"); 
+  }
+  arg1 = reinterpret_cast< worker::Config * >(argp1);
+  result = (int) ((arg1)->num);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Config_fd_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  worker::Config *arg1 = (worker::Config *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "Config_fd_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_worker__Config, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_fd_set" "', argument " "1"" of type '" "worker::Config *""'"); 
+  }
+  arg1 = reinterpret_cast< worker::Config * >(argp1);
+  ecode2 = SWIG_AsVal_bool(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Config_fd_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->fd = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Config_fd_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  worker::Config *arg1 = (worker::Config *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  bool result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_worker__Config, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Config_fd_get" "', argument " "1"" of type '" "worker::Config *""'"); 
+  }
+  arg1 = reinterpret_cast< worker::Config * >(argp1);
+  result = (bool) ((arg1)->fd);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Config(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  worker::Config *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "new_Config", 0, 0, 0)) SWIG_fail;
+  result = (worker::Config *)new worker::Config();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_worker__Config, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Config(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  worker::Config *arg1 = (worker::Config *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_worker__Config, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Config" "', argument " "1"" of type '" "worker::Config *""'"); 
+  }
+  arg1 = reinterpret_cast< worker::Config * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Config_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_worker__Config, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *Config_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  return SWIG_Python_InitShadowInstance(args);
+}
 
 SWIGINTERN PyObject *_wrap_GetWorker(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
@@ -3421,6 +3586,14 @@ static PyMethodDef SwigMethods[] = {
 	 { "delete_intp", _wrap_delete_intp, METH_O, NULL},
 	 { "intp_assign", _wrap_intp_assign, METH_VARARGS, NULL},
 	 { "intp_value", _wrap_intp_value, METH_O, NULL},
+	 { "Config_num_set", _wrap_Config_num_set, METH_VARARGS, NULL},
+	 { "Config_num_get", _wrap_Config_num_get, METH_O, NULL},
+	 { "Config_fd_set", _wrap_Config_fd_set, METH_VARARGS, NULL},
+	 { "Config_fd_get", _wrap_Config_fd_get, METH_O, NULL},
+	 { "new_Config", _wrap_new_Config, METH_NOARGS, NULL},
+	 { "delete_Config", _wrap_delete_Config, METH_O, NULL},
+	 { "Config_swigregister", Config_swigregister, METH_O, NULL},
+	 { "Config_swiginit", Config_swiginit, METH_VARARGS, NULL},
 	 { "GetWorker", _wrap_GetWorker, METH_O, NULL},
 	 { "ReleaseWorker", _wrap_ReleaseWorker, METH_O, NULL},
 	 { "delete_Worker", _wrap_delete_Worker, METH_O, NULL},
@@ -3440,21 +3613,25 @@ static PyMethodDef SwigMethods_proxydocs[] = {
 
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_worker__Config = {"_p_worker__Config", "worker::Config *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_worker__Worker = {"_p_worker__Worker", "worker::Worker *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_char,
   &_swigt__p_int,
+  &_swigt__p_worker__Config,
   &_swigt__p_worker__Worker,
 };
 
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_worker__Config[] = {  {&_swigt__p_worker__Config, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_worker__Worker[] = {  {&_swigt__p_worker__Worker, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_char,
   _swigc__p_int,
+  _swigc__p_worker__Config,
   _swigc__p_worker__Worker,
 };
 

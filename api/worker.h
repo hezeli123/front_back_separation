@@ -8,6 +8,11 @@ namespace worker {
 
 class Worker;
 
+struct Config {
+    int num = 0;
+    bool fd = false;
+};
+
 Worker* GetWorker(const std::string& target);
 void ReleaseWorker(Worker* client);
 

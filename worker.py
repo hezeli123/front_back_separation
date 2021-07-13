@@ -76,6 +76,19 @@ def intp_assign(obj, value):
 
 def intp_value(obj):
     return _worker.intp_value(obj)
+class Config(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+    num = property(_worker.Config_num_get, _worker.Config_num_set)
+    fd = property(_worker.Config_fd_get, _worker.Config_fd_set)
+
+    def __init__(self):
+        _worker.Config_swiginit(self, _worker.new_Config())
+    __swig_destroy__ = _worker.delete_Config
+
+# Register Config in _worker:
+_worker.Config_swigregister(Config)
+
 
 def GetWorker(target):
     return _worker.GetWorker(target)
