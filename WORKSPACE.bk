@@ -10,15 +10,3 @@ http_archive(
   sha256 = "94c634d499558a76fa649edb13721dce6e98fb1e7018dfaeba3cd7a083945e91",
 )
 
-new_local_repository(
-     name = "java_include",
-     path = "/export/servers/jdk1.6.0_25/include",
-     build_file_content = """
-package(default_visibility = ["//visibility:public"])
-cc_library(
-    name = "headers",
-    hdrs = glob(["*.h", "linux/*.h"])
-)
-"""
-)
-
