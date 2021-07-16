@@ -14,7 +14,7 @@
 4. mv bazel-bin/impl/_worker.so ./
 5. python python_test.py
 
-##java
+## java
 1. swig -c++ -java -package com.simple.front_back_separation -o java_simple_worker.cxx -outdir ./java_swig/ worker.i
 2. mv java_simple_worker.cxx impl/
 3. modify WORKSPACE for java headers dir, and impl/BUILD
