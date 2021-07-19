@@ -18,12 +18,14 @@
 1. swig -c++ -java -package com.simple.front_back_separation -o java_simple_worker.cxx -outdir ./java_swig/ worker.i
 2. mv java_simple_worker.cxx impl/
 3. modify WORKSPACE for java headers dir, and impl/BUILD
-4. bazel build //impl:java_worker.so
-5. mv bazel-bin/impl/java_worker.so ./
-6. test ...
+4. bazel build //impl:libjava_worker.so
+5. mv bazel-bin/impl/libjava_worker.so ./
+6. add so path to linux LD_LIBRARY_PATH
+7. cd com/simple/front_back_separation/ && javac *.java  -> get class files
+8. cd ../../.. && java -cp . com.simple.front_back_separation.java_test
 
 # Depends
-test pass by using bazel 0.24.1 and gcc 7.3.1
-SWIG: 4.0.2
-python: 2.7
-java: 1.6.0_25
+1. test pass by using bazel 0.24.1 and gcc 7.3.1
+2. SWIG: 4.0.2
+3. python: 2.7
+4. java: 1.6.0_25

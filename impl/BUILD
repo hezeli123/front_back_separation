@@ -36,7 +36,7 @@ cc_binary(
 
 # solve path error
 cc_binary(
-      name = "java_worker.so",
+      name = "libjava_worker.so",
       srcs = glob(["*.h", "*.cc", "java_simple_worker.cxx"], exclude=["*_test.cc"]),
       deps = [
           "//api:api",
